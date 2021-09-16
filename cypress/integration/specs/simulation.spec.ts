@@ -23,7 +23,7 @@ describe('Simulator Navigation', () => {
         const initialSOC = 10;
         //connect
         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/581723d');
+        simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/f46ae1d');
         simulate.changeIDtag().clear().type('Automation');
         simulate.chargerType("Sicharge_UC_Charger").click();
         simulate.connect().click();

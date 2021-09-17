@@ -19,21 +19,17 @@ const utils = new Utils();
 const meterValuepage = new meterValuepagess();
 
 describe('Simulator Navigation', () => {
-    cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
-        simulate.changeIDtag().clear().type('Automation');
-        simulate.chargerType("Sicharge_UC_Charger").click();
-        simulate.connect().click();
+   
 
     it('Simulator',() => {
         const loop = 100;
         const initialSOC = 10;
         //connect
-        // cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        // simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
-        // simulate.changeIDtag().clear().type('Automation');
-        // simulate.chargerType("Sicharge_UC_Charger").click();
-        // simulate.connect().click();
+         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
+         simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
+         simulate.changeIDtag().clear().type('Automation');
+         simulate.chargerType("Sicharge_UC_Charger").click();
+         simulate.connect().click();
         
         for(let i = 0; i < loop; i++){
         
@@ -91,11 +87,11 @@ describe('Simulator Navigation', () => {
         const loop = 100;
         const initialSOC = 10;
         //connect
-        // cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        // simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
-        // simulate.changeIDtag().clear().type('Automation');
-        // simulate.chargerType("Sicharge_UC_Charger").click();
-        // simulate.connect().click();
+         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
+         simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
+         simulate.changeIDtag().clear().type('Automation');
+         simulate.chargerType("Sicharge_UC_Charger").click();
+         simulate.connect().click();
         
         for(let i = 0; i < loop; i++){
         
@@ -149,15 +145,15 @@ describe('Simulator Navigation', () => {
 
     });
 
-    it('Simulator1',() => {
+    it('Simulator3',() => {
         const loop = 100;
         const initialSOC = 10;
         //connect
-        // cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        // simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
-        // simulate.changeIDtag().clear().type('Automation');
-        // simulate.chargerType("Sicharge_UC_Charger").click();
-        // simulate.connect().click();
+         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
+         simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
+         simulate.changeIDtag().clear().type('Automation');
+         simulate.chargerType("Sicharge_UC_Charger").click();
+         simulate.connect().click();
         
         for(let i = 0; i < loop; i++){
         
@@ -211,15 +207,15 @@ describe('Simulator Navigation', () => {
 
     });
 
-    it('Simulator1',() => {
+    it('Simulator5',() => {
         const loop = 100;
         const initialSOC = 10;
         //connect
-        // cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        // simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
-        // simulate.changeIDtag().clear().type('Automation');
-        // simulate.chargerType("Sicharge_UC_Charger").click();
-        // simulate.connect().click();
+         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
+         simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/c424af4');
+         simulate.changeIDtag().clear().type('Automation');
+         simulate.chargerType("Sicharge_UC_Charger").click();
+         simulate.connect().click();
         
         for(let i = 0; i < loop; i++){
         

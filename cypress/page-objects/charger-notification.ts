@@ -15,9 +15,9 @@ export class ChargerNotification {
 
     private getError(connectorID:string){
         if(connectorID==="1"){
-            return cy.get('select[id="Sicharge_UC_Error_Code"]').select('InternalError - shutdownRectifier - 35').first();
+            return cy.get('select[id="Sicharge_UC_Error_Code"]').select('UnderVoltage - DCLinkUnderVoltage - 27').first();
         }
-        return cy.get('select[id="Sicharge_UC_Error_Code"]').select('OtherError - frontEndDoor - 44').first();
+        return cy.get('select[id="Sicharge_UC_Error_Code"]').select('OtherError - chargingSystemIncompatibility - 24').first();
     }
 
     private setConnectorFieldAsConnector(connectorID:string){

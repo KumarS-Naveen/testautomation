@@ -20,18 +20,18 @@ const utils = new Utils();
 const meterValues = new meterValuepagess();
 
 describe('Simulator Navigation', () => {
-    cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
-        simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/996a523');
-        simulate.changeIDtag().clear().type('Automation');
-        simulate.chargerType("Sicharge_UC_Charger").click();
-        simulate.connect().click();
+    
 
     it('Simulator',() => {
         const loop = 100;
         const initialSOC = 30;
         //connect
         
-        
+        cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
+        simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/996a523');
+        simulate.changeIDtag().clear().type('Automation');
+        simulate.chargerType("Sicharge_UC_Charger").click();
+        simulate.connect().click();
         for(let i = 0; i < loop; i++){
         
         //status change

@@ -3,6 +3,7 @@ export class startTransaction {
     
     start(connectorId:string){ 
         this.starttransaction();
+        cy.wait(1000);
         //this.checkConnectorID()
         this.enterConnectorID(connectorId);
         this.starttransactionModel();

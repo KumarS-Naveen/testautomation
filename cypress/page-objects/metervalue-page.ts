@@ -1,8 +1,10 @@
-export class meterValuepage {
+export class meterValuepagess {
    const data:object = {"connectorId":1,"meterValue":
    [{"sampledValue":[
        {"context":"Sample.Periodic","format":"Raw","location":"Inlet","measurand":"Voltage","phase":"L3","unit":"V","value":"231"},
-       {"context":"Sample.Periodic","format":"Raw","location":"Inlet","measurand":"SoC","value":"10"},
+       {"context":"Sample.Periodic","format":"Raw","location":"Cable","measurand":"Temperature","unit":"Celsius","value":"22"},
+       {"context":"Sample.Periodic","format":"Raw","location":"Outlet","measurand":"Energy.Active.Import.Register","unit":"kWh","value":"20"},
+       {"context":"Sample.Periodic","format":"Raw","location":"Outlet","measurand":"Power.Offered","unit":"W","value":"18400"}
       ],
        "timestamp": new Date().toISOString()}]};
     sendMeterValue(){

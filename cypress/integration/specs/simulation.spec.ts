@@ -19,8 +19,8 @@ const utils = new Utils();
 
 describe('Simulator Navigation', () => {
     it('Simulator',() => {
-        const loop = 10;
-        const initialSOC = 10;
+        const loop = 100;
+        const initialSOC = 5;
         //connect
         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');
         simulate.chargerurl().clear().type('wss://ebuspt-chargerapp-ebusprod.eu1.mindsphere.io/ChargingStations/ebuspt-66940013ad2ac1c103fa80e2c23f6bbf/da4a475');
@@ -40,39 +40,41 @@ describe('Simulator Navigation', () => {
             statusNotification.setConnectorAsPreparing("2");
             
 
-            vehicle.sendvehicleID("1","BUSf46ae1d1");
-            vehicle.sendvehicleID("2","BUSZOED2");
+            vehicle.sendvehicleID("1","BUSf46ae1d2");
+            vehicle.sendvehicleID("2","BUS996a5232");
 
             // connector id 1 
             meterValue.sendmetervalue("1","SoC",String(0));
-            cy.wait(60000);
+            cy.wait(90000);
             statusNotification.setConnectorAsCharging("1");
             startTransactionPage.start("1");
             meterValue.sendmetervalue("1","SoC",String(initialSOC));
-            cy.wait(60000);
-            
+            cy.wait(90000);
+            meterValue.sendmetervalue("1","SoC",String(initialSOC+ utils.getRandomInt(25,35)));
+            cy.wait(70000);
             meterValue.sendmetervalue("1","SoC",String(initialSOC+ utils.getRandomInt(60,90)));
             cy.wait(2000); 
             stopTransactionPage.stop();
-            cy.wait(1000);
+            cy.wait(2000);
             statusNotification.setConnectorAsAvailable("1");
-            errorNotification.trigger("1");
+            //errorNotification.trigger("1");
 
 
             // connector id 2
             meterValue.sendmetervalue("2","SoC",String(0));
-            cy.wait(60000);
+            cy.wait(90000);
             statusNotification.setConnectorAsCharging("2");
             startTransactionPage.start("2");
             meterValue.sendmetervalue("2","SoC",String(initialSOC));
-            cy.wait(60000);
-            
+            cy.wait(90000);
+            meterValue.sendmetervalue("2","SoC",String(initialSOC)+ utils.getRandomInt(40,50));
+            cy.wait(70000);
             meterValue.sendmetervalue("2","SoC",String(initialSOC+ utils.getRandomInt(70,90)));
             cy.wait(2000);
             stopTransactionPage.stop();
-            cy.wait(1000);
+            cy.wait(2000);
             statusNotification.setConnectorAsAvailable("2");
-            errorNotification.trigger("2");
+            //errorNotification.trigger("2");
             statusNotification.setConnectorAsAvailable("2");
         }
 

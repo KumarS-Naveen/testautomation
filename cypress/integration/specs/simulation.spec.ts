@@ -19,7 +19,7 @@ const utils = new Utils();
 
 describe('Simulator Navigation', () => {
     it('Simulator',() => {
-        const loop = 10;
+        const loop = 100;
         const initialSOC = 10;
         //connect
         cy.visit('https://ebusdev-simulator-ebusdev.eu1.mindsphere.io/');

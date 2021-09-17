@@ -49,14 +49,15 @@ describe('Simulator Navigation', () => {
             statusNotification.setConnectorAsCharging("1");
             startTransactionPage.start("1");
             meterValue.sendmetervalue("1","SoC",String(initialSOC));
-            cy.wait(60000);
-            
-            meterValue.sendmetervalue("1","SoC",String(initialSOC+ utils.getRandomInt(60,90)));
+            cy.wait(70000);
+            meterValue.sendmetervalue("1","SoC",String(initialSOC+ utils.getRandomInt(10,20)));
+            cy.wait(70000);
+            meterValue.sendmetervalue("1","SoC",String(initialSOC+ utils.getRandomInt(80,90)));
             cy.wait(2000); 
             stopTransactionPage.stop();
-            cy.wait(1000);
+            cy.wait(2000);
             statusNotification.setConnectorAsAvailable("1");
-            errorNotification.trigger("1");
+            //errorNotification.trigger("1");
 
 
             // connector id 2
@@ -66,13 +67,14 @@ describe('Simulator Navigation', () => {
             startTransactionPage.start("2");
             meterValue.sendmetervalue("2","SoC",String(initialSOC));
             cy.wait(60000);
-            
-            meterValue.sendmetervalue("2","SoC",String(initialSOC+ utils.getRandomInt(70,90)));
+            meterValue.sendmetervalue("2","SoC",String(initialSOC+ utils.getRandomInt(30,50)));
+            cy.wait(60000);
+            meterValue.sendmetervalue("2","SoC",String(initialSOC+ utils.getRandomInt(75,85)));
             cy.wait(2000);
             stopTransactionPage.stop();
-            cy.wait(1000);
+            cy.wait(2000);
             statusNotification.setConnectorAsAvailable("2");
-            errorNotification.trigger("2");
+            //errorNotification.trigger("2");
             statusNotification.setConnectorAsAvailable("2");
         }
 
